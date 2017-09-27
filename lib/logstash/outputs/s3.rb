@@ -362,6 +362,7 @@ class LogStash::Outputs::S3 < LogStash::Outputs::Base
       file.delete!
     rescue AWS::Errors::Base => e
       @logger.error("S3: AWS error: unable to delete file", :error => e)
+    end
   end
 
   # The upload process will use a separate uploader/threadpool with less resource allocated to it.
